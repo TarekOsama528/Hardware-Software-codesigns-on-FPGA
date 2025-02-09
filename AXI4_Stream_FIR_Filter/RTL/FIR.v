@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/31/2024 03:50:37 AM
+// Create Date:
 // Design Name: 
 // Module Name: FIR Filter
 // Project Name: 
@@ -24,7 +24,7 @@ input axi_reset_n,
 
 //AXI4-S slave I/O
 input s_axis_valid,
-(* IOSTANDARD = "LVCMOS18", SLEW = "SLOW", DRIVE = 8 *)
+
 input signed [DATA_INPUT-1:0] s_axis_data,
 output s_axis_ready,
 
@@ -32,13 +32,11 @@ output s_axis_ready,
 input  m_axis_ready,
 output reg  m_axis_valid,
 
-
-(* IOSTANDARD = "LVCMOS18", SLEW = "SLOW", DRIVE = 8 *)
 output reg signed [DATA__OUTPUT-1:0] m_axis_data
  );
  
  
-//Tthis array is used to store samples and shift them
+//this array is used to store samples and shift them
   reg signed [DATA_INPUT-1:0] s_samples [0:6]; 
   //this array is used to store the coff
   wire signed [DATA_INPUT-1:0] b [0:7];

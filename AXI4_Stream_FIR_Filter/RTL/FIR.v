@@ -62,13 +62,7 @@ always@(posedge axi_clk or negedge axi_reset_n)
 begin
       if(!axi_reset_n)
        begin 
-                 s_samples[0] <= 0;
-                 s_samples[1] <= 0;
-                 s_samples[2] <= 0;
-                 s_samples[3] <= 0;
-                 s_samples[4] <= 0;
-                 s_samples[5] <= 0;
-                 s_samples[6] <= 0;
+                 s_samples <= 0;
                  m_axis_data <= 0;
 
                  m_axis_valid <= 0 ;

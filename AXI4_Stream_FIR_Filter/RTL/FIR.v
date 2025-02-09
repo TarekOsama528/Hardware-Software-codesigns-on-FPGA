@@ -70,6 +70,8 @@ begin
                  s_samples[5] <= 0;
                  s_samples[6] <= 0;
                  m_axis_data <= 0;
+
+                 m_axis_valid <= 0 ;
        end
             
      else if(s_axis_valid & s_axis_ready)
@@ -90,19 +92,11 @@ begin
              +b[5]*s_samples[4]
              +b[6]*s_samples[5]
              +b[7]*s_samples[6]; 
+
+             m_axis_valid <= s_axis_valid;
               
         end
  end 
-        
-//condition for send and receive        
-always@(posedge axi_clk or negedge axi_reset_n)
- begin
-     if(!axi_reset_n)
-          m_axis_valid <= 0 ;
-      else
-          m_axis_valid <= s_axis_valid ;
-      
- end
  
 
  endmodule
